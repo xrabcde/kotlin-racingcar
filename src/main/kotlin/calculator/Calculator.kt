@@ -11,9 +11,9 @@ class Calculator {
 
         for (split in splits) {
             if (split.index % 2 == 0) {
-                tmpValue = tmpOperator.operate(tmpValue, split.value.toInt())
+                tmpValue = numberTurn(tmpValue, tmpOperator, split.value)
             } else {
-                tmpOperator = Operator.findBySymbol(split.value)
+                tmpOperator = operatorTurn(split.value)
             }
         }
 
@@ -24,5 +24,18 @@ class Calculator {
         if (Objects.isNull(input) || input == "") {
             throw IllegalArgumentException("빈 문자열을 입력하셨습니다.")
         }
+    }
+
+    private fun numberTurn(tmpValue: Int, operator: Operator, value: String): Int {
+        try {
+            val newValue = value.toInt()
+            return operator.operate(tmpValue, newValue)
+        } catch (e: NumberFormatException) {
+            throw IllegalArgumentException("올바른 숫자를 입력해주세요.")
+        }
+    }
+
+    private fun operatorTurn(value: String): Operator {
+        return Operator.findBySymbol(value)
     }
 }
