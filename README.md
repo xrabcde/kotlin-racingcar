@@ -3,7 +3,7 @@
 ### 2단계 - 문자열 계산기
 
 - [x] 사용자가 문자열 입력
-  - [ ] 입력값이 null이거나 빈 공백 문자일 경우 IllegalArgumentException
+  - [x] 입력값이 null이거나 빈 공백 문자일 경우 IllegalArgumentException
 - [ ] 입력된 문자열 split 후 숫자와 연산자로 구분
   - [ ] 사칙연산 기호가 아닌 경우 IllegalArgumentException
   - [ ] 숫자가 아닌 경우 IllegalArgumentException
