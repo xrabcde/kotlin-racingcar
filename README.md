@@ -16,4 +16,4 @@
 - [x] 연산결과 출력
 
 - [x] Calculator 테스트 작성
-- [ ] Operator 테스트 작성
+- [x] Operator 테스트 작성
