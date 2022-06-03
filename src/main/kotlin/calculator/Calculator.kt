@@ -4,7 +4,7 @@ import java.util.Objects
 
 class Calculator {
     fun calculate(input: String): Int {
-        validateInput(input)
+        require(input.isNotBlank()) { "빈 문자열을 입력하셨습니다." }
         val splits = input.split(" ").withIndex()
         var tmpValue = 0
         var tmpOperator = Operator.PLUS
@@ -18,12 +18,6 @@ class Calculator {
         }
 
         return tmpValue
-    }
-
-    private fun validateInput(input: String) {
-        if (Objects.isNull(input) || input == "") {
-            throw IllegalArgumentException("빈 문자열을 입력하셨습니다.")
-        }
     }
 
     private fun numberTurn(tmpValue: Int, operator: Operator, value: String): Int {
