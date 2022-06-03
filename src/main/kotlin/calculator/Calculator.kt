@@ -1,7 +1,5 @@
 package calculator
 
-import java.util.Objects
-
 class Calculator {
     fun calculate(input: String): Int {
         require(input.isNotBlank()) { "빈 문자열을 입력하셨습니다." }
