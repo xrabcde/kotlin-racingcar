@@ -5,6 +5,14 @@ fun main() {
     val cars = Cars(readln())
     println("시도할 횟수는 몇 회인가요?")
     val turn = readln()
+
     println("\n실행 결과")
-    println("가 최종 우승했습니다.")
+    for (i in 0 until turn.toInt()) {
+        cars.move()
+        cars.print()
+        println()
+    }
+
+    val winners = cars.findWinners().map { it.name }.toList().joinToString(", ")
+    println("$winners 가 최종 우승했습니다.")
 }
