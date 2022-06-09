@@ -2,7 +2,10 @@ package racingcar
 
 import io.kotest.assertions.throwables.shouldThrowWithMessage
 import io.kotest.core.spec.style.FreeSpec
+import io.kotest.inspectors.forAll
 import io.kotest.matchers.shouldBe
+
+private const val NAME_LENGTH_MESSAGE = "자동차 이름은 1글자에서 5글자 사이로 입력해주세요."
 
 class CarTest : FreeSpec({
     "자동차는 이름을 가질 수 있다" {
@@ -11,10 +14,9 @@ class CarTest : FreeSpec({
     }
 
     "자동차의 이름은 5글자를 초과할 수 없다" {
-        shouldThrowWithMessage<IllegalArgumentException>("자동차의 이름은 5글자 미만이어야 합니다.") { Car("5글자가 넘는 이름") }
-    }
-
-    "자동차의 이름은 빈 값일 수 없다" {
-        shouldThrowWithMessage<IllegalArgumentException>("자동차의 이름은 빈 값일 수 없습니다.") { Car("") }
+        val testCases = listOf("", " ", "5글자가 넘는 이름")
+        testCases.forAll {
+            shouldThrowWithMessage<IllegalArgumentException>(NAME_LENGTH_MESSAGE) { Car(it) }
+        }
     }
 })
