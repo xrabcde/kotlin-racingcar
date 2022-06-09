@@ -19,4 +19,16 @@ class CarTest : FreeSpec({
             shouldThrowWithMessage<IllegalArgumentException>(NAME_LENGTH_MESSAGE) { Car(it) }
         }
     }
+
+    "무작위 숫자가 4 이상일 때 전진한다" {
+        val car = Car("bada")
+        car.move(4)
+        car.position shouldBe 1
+    }
+
+    "무작위 숫자가 4 미만일 때 움직이지 않는다" {
+        val car = Car("bada")
+        car.move(3)
+        car.position shouldBe 0
+    }
 })
