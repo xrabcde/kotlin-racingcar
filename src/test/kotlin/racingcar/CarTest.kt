@@ -13,4 +13,8 @@ class CarTest : FreeSpec({
     "자동차의 이름은 5글자를 초과할 수 없다" {
         shouldThrowWithMessage<IllegalArgumentException>("자동차의 이름은 5글자 미만이어야 합니다.") { Car("5글자가 넘는 이름") }
     }
+
+    "자동차의 이름은 빈 값일 수 없다" {
+        shouldThrowWithMessage<IllegalArgumentException>("자동차의 이름은 빈 값일 수 없습니다.") { Car("") }
+    }
 })
