@@ -14,6 +14,10 @@ class Car(val name: String) {
         }
     }
 
+    fun printPosition(): String {
+        return "$name : " + "-".repeat(position)
+    }
+
     companion object {
         private var NAME_LENGTH_RANGE: IntRange = (1..5)
     }

@@ -31,4 +31,10 @@ class CarTest : FreeSpec({
         car.move(3)
         car.position shouldBe 0
     }
+
+    "자동차 자신의 현재 위치를 출력한다" {
+        val car = Car("bada")
+        car.move(4)
+        car.printPosition() shouldBe "bada : -"
+    }
 })
