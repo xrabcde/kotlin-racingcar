@@ -1,4 +1,4 @@
-package racingcar
+package racingcar.domain
 
 class Car(val name: String) {
     var position: Int = 0
@@ -14,7 +14,7 @@ class Car(val name: String) {
         }
     }
 
-    fun printPosition(): String {
+    fun getPosition(): String {
         return "$name : " + "-".repeat(position)
     }
 

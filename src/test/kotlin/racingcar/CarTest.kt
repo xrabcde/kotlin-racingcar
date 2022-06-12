@@ -4,6 +4,7 @@ import io.kotest.assertions.throwables.shouldThrowWithMessage
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.inspectors.forAll
 import io.kotest.matchers.shouldBe
+import racingcar.domain.Car
 
 private const val NAME_LENGTH_MESSAGE = "자동차 이름은 1글자에서 5글자 사이로 입력해주세요."
 
@@ -35,6 +36,6 @@ class CarTest : FreeSpec({
     "자동차 자신의 현재 위치를 출력한다" {
         val car = Car("bada")
         car.move(4)
-        car.printPosition() shouldBe "bada : -"
+        car.getPosition() shouldBe "bada : -"
     }
 })
