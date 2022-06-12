@@ -12,4 +12,10 @@ class CarsTest : FreeSpec({
         cars.values[1].name shouldBe "pobi"
         cars.values[2].name shouldBe "jason"
     }
+
+    "가장 멀리 간 자동차가 우승한다" {
+        val cars = Cars("bada, pobi, jason")
+        cars.values[0].move(5)
+        cars.findWinners()[0].name shouldBe "bada"
+    }
 })
