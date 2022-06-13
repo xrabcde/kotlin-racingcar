@@ -16,6 +16,14 @@ class CarsTest : FreeSpec({
     "가장 멀리 간 자동차가 우승한다" {
         val cars = Cars("bada, pobi, jason")
         cars.values[0].move(5)
+        cars.findWinners().size shouldBe 1
         cars.findWinners()[0].name shouldBe "bada"
+    }
+
+    "우승자는 한 명 이상일 수 있다" {
+        val cars = Cars("bada, pobi, jason")
+        cars.values[0].move(5)
+        cars.values[1].move(5)
+        cars.findWinners().size shouldBe 2
     }
 })
