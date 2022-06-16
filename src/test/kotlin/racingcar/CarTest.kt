@@ -14,7 +14,7 @@ class CarTest : FreeSpec({
         car.name shouldBe "bada"
     }
 
-    "자동차의 이름은 5글자를 초과할 수 없다" {
+    "자동차의 이름이 1글자에서 5글자 사이가 아니라면 예외를 반환한다" {
         val testCases = listOf("", " ", "5글자가 넘는 이름")
         testCases.forAll {
             shouldThrowWithMessage<IllegalArgumentException>(NAME_LENGTH_MESSAGE) { Car(it) }
