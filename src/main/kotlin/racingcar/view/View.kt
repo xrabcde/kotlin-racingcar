@@ -20,7 +20,7 @@ class View {
 
     fun printScores(cars: Cars) {
         cars.values.forEach {
-            println(it.getPosition())
+            println("$it.name : " + "-".repeat(it.position))
         }
         println()
     }
