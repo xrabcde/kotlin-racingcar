@@ -24,11 +24,10 @@ class Game {
 
     fun play() {
         view.printResult()
-        for (i in 0 until turn) {
+        repeat(turn) {
             cars.move()
             view.printScores(cars)
         }
-
         view.printWinners(cars.findWinners().map { it.name }.toList())
     }
 }
