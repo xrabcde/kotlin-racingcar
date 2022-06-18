@@ -1,30 +1,23 @@
 package racingcar.controller
 
 import racingcar.domain.Cars
+import racingcar.domain.Turn
 import racingcar.view.View
 
 class Game {
     private val view : View
     private val cars : Cars
-    private val turn : Int
+    private val turn : Turn
 
     init {
         view = View()
         cars = Cars(view.inputNames())
-        turn = validTurn(view.inputTurn())
-    }
-
-    private fun validTurn(input: String): Int {
-        try {
-            return input.toInt()
-        } catch (e: NumberFormatException) {
-            throw IllegalArgumentException("시도할 횟수를 숫자로 입력해주세요.")
-        }
+        turn = Turn(view.inputTurn())
     }
 
     fun play() {
         view.printResult()
-        repeat(turn) {
+        repeat(turn.value) {
             cars.move()
             view.printScores(cars)
         }
