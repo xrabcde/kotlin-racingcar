@@ -1,16 +1,6 @@
 package racingcar.domain
 
-class Cars(names: String) {
-    var values: List<Car> = emptyList()
-        private set
-
-    init {
-        val splitNames = names.split(", ")
-        for (name in splitNames) {
-            values += Car(name)
-        }
-    }
-
+class Cars(val values: List<Car>) {
     fun move() {
         values.forEach {
             it.move((0..9).random())

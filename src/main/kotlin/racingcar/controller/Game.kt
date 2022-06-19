@@ -1,5 +1,6 @@
 package racingcar.controller
 
+import racingcar.domain.Car
 import racingcar.domain.Cars
 import racingcar.domain.Turn
 import racingcar.view.View
@@ -11,7 +12,7 @@ class Game {
 
     init {
         view = View()
-        cars = Cars(view.inputNames())
+        cars = Cars(view.inputNames().map { Car(it) })
         turn = Turn(view.inputTurn())
     }
 
