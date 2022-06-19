@@ -17,8 +17,8 @@ class Cars(names: String) {
         }
     }
 
-    fun findWinners(): List<Car> {
+    fun findWinners(): List<String> {
         val maxPosition = values.maxOf { it.position }
-        return values.filter { it.position == maxPosition }
+        return values.filter { it.position == maxPosition }.map { it.name }.toList()
     }
 }

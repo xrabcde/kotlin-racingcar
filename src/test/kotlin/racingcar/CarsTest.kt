@@ -17,7 +17,7 @@ class CarsTest : FreeSpec({
         val cars = Cars("bada, pobi, jason")
         cars.values[0].move(5)
         cars.findWinners().size shouldBe 1
-        cars.findWinners()[0].name shouldBe "bada"
+        cars.findWinners()[0] shouldBe "bada"
     }
 
     "우승자는 한 명 이상일 수 있다" {

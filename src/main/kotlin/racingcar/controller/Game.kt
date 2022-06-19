@@ -21,6 +21,6 @@ class Game {
             cars.move()
             view.printScores(cars)
         }
-        view.printWinners(cars.findWinners().map { it.name }.toList())
+        view.printWinners(cars.findWinners())
     }
 }
