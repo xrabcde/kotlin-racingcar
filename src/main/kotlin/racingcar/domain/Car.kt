@@ -9,12 +9,13 @@ class Car(val name: String) {
     }
 
     fun move(condition: Int) {
-        if (condition >= 4) {
+        if (condition >= MIN_MOVE_CONDITION) {
             position++
         }
     }
 
     companion object {
         private var NAME_LENGTH_RANGE: IntRange = (1..5)
+        private var MIN_MOVE_CONDITION: Int = 4
     }
 }
