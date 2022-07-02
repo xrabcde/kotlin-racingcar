@@ -32,4 +32,10 @@ class CarTest : FreeSpec({
         car.move(3)
         car.position shouldBe 0
     }
+
+    "이름이 같으면 같은 자동차이다" {
+        val car1 = Car("bada")
+        val car2 = Car("bada")
+        car1 shouldBe car2
+    }
 })
