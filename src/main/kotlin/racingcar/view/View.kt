@@ -1,5 +1,6 @@
 package racingcar.view
 
+import racingcar.domain.Car
 import racingcar.domain.Cars
 
 class View {
@@ -25,8 +26,8 @@ class View {
         println()
     }
 
-    fun printWinners(winnerList: List<String>) {
-        val winners = winnerList.joinToString(", ")
+    fun printWinners(winnerList: List<Car>) {
+        val winners = winnerList.map { it.name }.toList().joinToString(", ")
         println("$winners 가 최종 우승했습니다.")
     }
 }
